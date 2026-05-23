@@ -573,16 +573,10 @@
         logoutBtn.addEventListener('click', () => auth.signOut());
 
         let appInitialized = false;
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                authContainer.style.display = 'none';
-                mainSystem.style.display = 'flex';
-                if (!appInitialized) { appInitialized = true; initApp(); }
-            } else {
-                authContainer.style.display = 'flex';
-                mainSystem.style.display = 'none';
-            }
-        });
+        
+        authContainer.style.display = 'none';
+        mainSystem.style.display = 'flex';
+        if (!appInitialized) { appInitialized = true; initApp(); }
 
         function initApp() {
             // ---------- 以下为完整业务逻辑（与上一版一致） ----------
