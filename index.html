@@ -338,7 +338,6 @@
 
     <!-- 主系统界面 -->
     <div id="mainSystem" style="display:none; flex-direction: column; flex:1;">
-        <button class="logout-btn" id="logoutBtn">退出</button>
         <div class="header">
             <span class="header-title">🎫 次卡管理</span>
             <div class="header-actions">
@@ -570,7 +569,7 @@
             auth.createUserWithEmailAndPassword(document.getElementById('registerEmail').value, document.getElementById('registerPassword').value)
                 .catch(err => authError.textContent = '注册失败：' + err.message);
         });
-        logoutBtn.addEventListener('click', () => auth.signOut());
+        
 
         let appInitialized = false;
         
